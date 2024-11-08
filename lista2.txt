@@ -1,0 +1,257 @@
+1.Crie um programa que imprima a sequência dos 100 próximos números inteiros, seguintes a um
+valor fornecido pela pessoa utilizadora.
+
+import java.util.Scanner;
+	public class Main {
+    public static void main(String[] args) {
+        int numero;
+        Scanner input = new Scanner(System.in);
+        System.out.print("Entre com um número: ");
+        numero = input.nextInt();
+        for (int i = numero; i < numero + 100; i++){
+
+            System.out.println(i);
+
+        }
+
+
+        }
+    }
+......................................................................................
+3.Na usina de Angra dos Reis, os técnicos analisam a perda de massa de um material radioativo.
+Sabendo-se que este perde 25% de sua massa a cada 30 segundos. Criar um programa que
+calcule iterativamente e imprima o tempo necessário para que a massa deste material se torne
+menor que 0, 10 grama. O programa pode calcular o tempo para várias massas.
+
+import java.util.Scanner;
+	public class Main {
+    public static void main(String[] args) {
+    Scanner input = new Scanner(System.in);
+    double massa;
+    double perda = 0.25;
+    double intervalo = 30;
+
+    System.out.print("Qual a massa do material (em gramas): ");
+    massa = input.nextDouble();
+
+    double tempoTotalSegundos = 0;
+
+
+    while (massa >= 0.10) {
+        massa *= (1 - perda);
+        tempoTotalSegundos += intervalo;
+    }
+
+    long horas = (long) (tempoTotalSegundos / 3600);
+    long minutos = (long) ((tempoTotalSegundos % 3600) / 60);
+    long segundos = (long) (tempoTotalSegundos % 60);
+
+    System.out.printf("Tempo necessário para a massa se tornar menor que 0,10 gramas: %d horas, %d minutos e %d segundos.%n", horas, minutos, segundos);
+
+    input.close();
+}
+
+.................................................... ..................................
+5.Faça um algoritmo que receba a idade, altura e peso de 10 pessoas. Calcule e mostre:
+(a) a quantidade de pessoas com idade superior a 50 anos;
+(b) a média das alturas das pessoas com idade entre 10 e 20 anos;
+(c) a porcentagem de pessoas com peso inferior a 40 quilos entre todas as pessoas.
+
+import java.util.Scanner;
+
+	public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int[] idades = new int[11];
+        double[] alturas = new double[11];
+        double[] pesos = new double[11];
+
+        for (int i = 0; i < idades.length; i++) {
+            System.out.print("Insira a idade da pessoa " + (i + 1) + ": ");
+            idades[i] = input.nextInt();
+            System.out.print("Insira a altura da pessoa " + (i + 1) + ": ");
+            alturas[i] = input.nextDouble();
+            System.out.print("Insira o peso da pessoa " + (i + 1) + ": ");
+            pesos[i] = input.nextDouble();
+        }
+        int idadeContador = 0;
+        double mediaAltura10a20 = 0;
+        int pesoInferior40 = 0;
+        for(int i = 0; i < idades.length; i++)
+        if (idades[1] > 50){
+            idadeContador++;
+        } if (idades )
+
+    }
+}
+......................................................................................
+6.Em um campeonato de LOL, enquanto não há a tomada de território, o contador implementado
+deve contar (que é contabilizado pelo jogo), o número de kills, deaths e assists. Se o número
+de kills for menor ou igual a 5, ele mostra a mensagem “noob”, se chegar a 20 ou mais
+“master”. Se o número de deaths chegar a 20 ou mais, ele mostra a mensagem “Houston,
+we have a problem”. Se o número de assists chegar a 20 ou mais, é mostrada a mensagem:
+“team work”. Lembre-se, é uma rotina que continua enquanto não houver um vencedor.
+• há kills, deaths e assists total e da rodada
+• medite na frase: enquanto não há um vencedor, faça?
+• pergunte a cada loop o número de cada medida comentada.
+• você deve perguntar se há um vencedor a cada loop?
+
+import java.util.Scanner;
+	public class Main {
+    public static void main(String[] args) {
+    Scanner input = new Scanner(System.in);
+    int[] kills new int[21];
+    int[] deaths new int[21];
+    int[] assists new int[21];
+    boolean partida = false;
+    while(!partida){
+    for(int i = 0; i < 21; i++) {
+        System.out.print("Entre com a quantidade de kills do player:");
+        kills[i] = input.nextInt();
+        System.out.print("Entre com a quantidade de deaths do player:");
+        deaths[i] = input.nextInt();
+        System.out.print("Entre com a quantidade de assists do player:");
+        assists[i] = input.nextInt();
+        if (kills[] =< 5) {
+            System.out.print("Player " + (i + 1) + ": Noob");
+        } if (kills[] >= 20) {
+            System.out.print("Player " + (i + 1) + ": Master");
+        } if (deaths[] >= 20) {
+            System.out.print("Player " + (i + 1) + ": Houston, we have a problem");
+        } if (assists[] >= 20){
+            System.out.print("Player " + (i + 1) + ": Team work");
+        }
+        System.out.print("Há um vencedor? (s/n): ");
+        char resposta = input.next().toLowerCase().charAt(0);
+        if(resposta == s) {
+            partida = true;
+        } 
+        System.out.print("Fim de jogo");
+        
+
+	
+        }
+    }
+}
+--------------------------------------------------------------------------------------------------------------------------------
+2. Escreva um programa em Java que calcule o produto de A (número real) por B (número inteiro),
+ou seja, A*B, por intermédio de adições sucessivas. Tanto A quanto B devem ser fornecidos
+pela pessoa utilizadora do programa.
+
+import java.util.Scanner;
+public class LISTA {
+    public static void main(String[] args) {
+        
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Digite o número real A: ");
+        double A = scanner.nextDouble();
+
+        System.out.print("Digite o número inteiro B: ");
+        int B = scanner.nextInt();
+        
+        double produto = 0;
+        
+        for (int i = 0; i < Math.abs(B); i++) {
+            produto += A;
+        }
+        
+        if (B < 0) {
+            produto = -produto;
+        }
+        
+        System.out.println("O produto de " + A + " e " + B + " é: " + produto);
+    }
+}
+----------------------------------------------------------------------------------------------------------------------------------
+8.import java.util.Scanner;
+public class LISTA {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Escolha uma forma geométrica:");
+        System.out.println("1. Retângulo");
+        System.out.println("2. Diagonal Superior Esquerda");
+        System.out.println("3. Diagonal Superior Direita");
+        System.out.println("4. Diagonal Inferior Esquerda");
+        System.out.println("5. Diagonal Inferior Direita");
+        System.out.print("Digite o número da opção desejada: ");
+        int opcao = scanner.nextInt();
+
+        System.out.print("Digite a quantidade de colunas (número inteiro): ");
+        int colunas = scanner.nextInt();
+        
+        switch (opcao) {
+            case 1:
+                desenharRetangulo(colunas);
+                break;
+            case 2:
+                desenharDiagonalSuperiorEsquerda(colunas);
+                break;
+            case 3:
+                desenharDiagonalSuperiorDireita(colunas);
+                break;
+            case 4:
+                desenharDiagonalInferiorEsquerda(colunas);
+                break;
+            case 5:
+                desenharDiagonalInferiorDireita(colunas);
+                break;
+            default:
+                System.out.println("Opção inválida!");
+        }
+
+        scanner.close();
+    }
+    
+    public static void desenharRetangulo(int colunas) {
+        for (int i = 0; i < colunas; i++) {
+            for (int j = 0; j < colunas; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+    
+    public static void desenharDiagonalSuperiorEsquerda(int colunas) {
+        for (int i = 0; i < colunas; i++) {
+            for (int j = 0; j < colunas - i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+    public static void desenharDiagonalSuperiorDireita(int colunas) {
+        for (int i = 0; i < colunas; i++) {
+            for (int j = 0; j < i; j++) {
+                System.out.print("  "); 
+            }
+            for (int j = i; j < colunas; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+    public static void desenharDiagonalInferiorEsquerda(int colunas) {
+        for (int i = 0; i < colunas; i++) {
+            for (int j = 0; j <= i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+    
+    public static void desenharDiagonalInferiorDireita(int colunas) {
+        for (int i = 0; i < colunas; i++) {
+            for (int j = 0; j < colunas - i - 1; j++) {
+                System.out.print("  "); 
+            }
+            for (int j = 0; j <= i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+}
+
